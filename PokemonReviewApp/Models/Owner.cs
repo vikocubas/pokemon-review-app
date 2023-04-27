@@ -7,5 +7,6 @@
         public string Gym { get; set; }
         // Relação 1 Owner tem 1 Country
         public Country Country { get; set; }
+        public ICollection<PokemonOwner> PokemonOwners { get; set; }
     }
 }
