@@ -4,7 +4,7 @@
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
-        public string LastName { get; internal set; }
+        public string LastName { get;  set; }
         public string Gym { get; set; }
         // Relação 1 Owner tem 1 Country
         public Country Country { get; set; }
