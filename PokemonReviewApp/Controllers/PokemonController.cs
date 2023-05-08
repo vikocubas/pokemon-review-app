@@ -20,7 +20,7 @@ namespace PokemonReviewApp.Controllers
             _mapper = mapper;
         }
 
-        // Método GET retornando uma lista
+        // Método GET retornando uma lista de todos Pokemons
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(IEnumerable<Pokemon>))]
 

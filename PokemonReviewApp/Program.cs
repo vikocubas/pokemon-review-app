@@ -25,6 +25,8 @@ namespace PokemonReviewApp
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             // Ativa o serviço da Interface e Repositório
             builder.Services.AddScoped<IPokemonRepository, PokemonRepository>();
+            builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+            builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 
             // Adiciona os objetos de Seed
             builder.Services.AddTransient<Seed>();
