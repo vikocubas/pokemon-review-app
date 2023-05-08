@@ -8,6 +8,6 @@
         // Relação 1 Review tem 1 Reviewer e 1 Pokemon
         public Reviewer Reviewer { get; set; }
         public Pokemon Pokemon { get; set; }
-        public int Rating { get; internal set; }
+        public int Rating { get;  set; }
     }
 }

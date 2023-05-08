@@ -1,7 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
+using Microsoft.Extensions.DependencyInjection;
 using PokemonReviewApp.Data;
 using PokemonReviewApp.Interfaces;
+using PokemonReviewApp.Models;
 using PokemonReviewApp.Repository;
 
 
@@ -19,15 +21,23 @@ namespace PokemonReviewApp
 
             // Adiciona os objetos do Seed
             builder.Services.AddTransient<Seed>();
+            // Adiciona o AutoMapper
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             // Ativa o serviço da Interface e Repositório
             builder.Services.AddScoped<IPokemonRepository, PokemonRepository>();
 
             // Adiciona os objetos de Seed
             builder.Services.AddTransient<Seed>();
+            
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddDbContext<DataContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+            });
+            
 
             var app = builder.Build();
 
