@@ -21,11 +21,13 @@ namespace PokemonReviewApp
 
             // Adiciona os objetos do Seed
             builder.Services.AddTransient<Seed>();
+            
             // Arrumando o erro: System.Text.Json.JsonException: A possible object cycle was detected
             builder.Services.AddControllers().AddJsonOptions(x =>
                             x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
             // Adiciona o AutoMapper
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            
             // Ativa o serviço da Interface e Repositório
             builder.Services.AddScoped<IPokemonRepository, PokemonRepository>();
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();

@@ -11,6 +11,10 @@ namespace PokemonReviewApp.Interfaces
         bool OwnerExists(int ownerId);
         //Criando interface para o método post
         bool CreateOwner(Owner owner);
+        //Criando interface para o método update
+        bool UpdateOwner(Owner owner);
+        //Criando interface para o método delete
+        bool DeleteOwner(Owner owner);
         bool Save();
     }
 }

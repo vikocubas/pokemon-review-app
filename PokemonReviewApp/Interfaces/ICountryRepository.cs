@@ -11,6 +11,10 @@ namespace PokemonReviewApp.Interfaces
         bool CountryExists(int id);
         //Criando interface para o método post
         bool CreateCountry(Country country);
+        //Criando interface para o método update
+        bool UpdateCountry(Country country);
+        //Criando interface para o método delete
+        bool DeleteCountry(Country country);
         bool Save();
 
     }

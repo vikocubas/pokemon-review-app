@@ -10,6 +10,10 @@ namespace PokemonReviewApp.Interfaces
         bool ReviewExists(int reviewId);
         //Criando interface para o método post
         bool CreateReview(Review review);
+        //Criando interface para o método update
+        bool UpdateReview(Review review);
+        //Criando interface para o método delete
+        bool DeleteReview(Review review);
         bool Save();
     }
 }
